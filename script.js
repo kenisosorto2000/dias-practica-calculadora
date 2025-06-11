@@ -31,10 +31,12 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
   const fechaFinalStr = fechaActual.toLocaleDateString('es-ES', opcionesFecha);
   const hoyStr = hoy.toLocaleDateString('es-ES', opcionesFecha);
   const diasNaturales = Math.round((fechaActual - hoy) / (1000 * 60 * 60 * 24));
+  const diasRestantes = objetivo - acumulados;
 
   resultadoDiv.innerHTML = `
     <p><strong>Hoy es:</strong> ${hoyStr}</p>
     <p><strong>Días de práctica acumulados:</strong> ${acumulados}</p>
+    <p><strong>Faltan:</strong> ${diasRestantes} días de práctica para alcanzar los ${objetivo} días.</p>
     <p><strong>Llegarás a ${objetivo} días de práctica el:</strong> ${fechaFinalStr}</p>
     <p><strong>Faltan:</strong> ${diasNaturales} días naturales desde hoy.</p>
   `;
